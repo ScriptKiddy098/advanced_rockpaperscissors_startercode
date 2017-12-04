@@ -1,1 +1,42 @@
-#Roc
+
+
+/*  Rock    */
+#Rock{
+ 
+    height: 220px;
+transition: ease-out .6s;
+}
+
+#Rock:hover{ 
+  height: 240px;
+  padding: 20px;
+} 
+
+/* Scissors */
+#Scissors{ 
+  height: 200px ;  
+  width: 250px;
+  transition: ease-out .6s; 
+} 
+
+#Scissors:hover{ 
+  height: 200px; 
+  padding: 20px;
+} 
+
+/*  Paper */
+#Paper { 
+
+  height: 210px;
+  transition: ease-out .6s 
+} 
+
+#Paper:hover{ 
+  height: 250px;
+  padding: 20px;
+}
+
+.top{ 
+  display: flex;
+  justify-content: space-between;
+} 
