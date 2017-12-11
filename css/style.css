@@ -1,42 +1,156 @@
-
-
+body{ 
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/memphis-colorful.png");
+}
 /*  Rock    */
 #Rock{
- 
+ margin-top: 75px; 
     height: 220px;
-transition: ease-out .6s;
+transition: transform ease-out .6s;
 }
 
 #Rock:hover{ 
-  height: 240px;
-  padding: 20px;
+  transform: scale(1.2);
+ 
 } 
 
 /* Scissors */
 #Scissors{ 
+  margin-top: 75px;
   height: 200px ;  
   width: 250px;
-  transition: ease-out .6s; 
+  transform: scale(1);
+  transition: transform ease-out .6s; 
 } 
 
 #Scissors:hover{ 
-  height: 200px; 
-  padding: 20px;
+  transform: scale(1.2);
 } 
 
 /*  Paper */
 #Paper { 
-
+ margin-top: 5pc; 
   height: 210px;
-  transition: ease-out .6s 
+  transition: transform ease-out .6s 
 } 
 
 #Paper:hover{ 
-  height: 250px;
-  padding: 20px;
+  transform: scale(1.2);
 }
 
-.top{ 
-  display: flex;
-  justify-content: space-between;
-} 
+.bottom{
+  margin: auto;
+}
+
+.center-text{
+ text-align: center; 
+}
+
+* {
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.search-form {
+  position: relative;
+  margin: 150px auto 0;
+  width: 300px;
+}
+
+.search-form:before {
+  content: ' ';
+  position: absolute;
+  left: 25px;
+  top: 14px;
+  width: 2px;
+  height: 36px;
+  transform: scale(0);
+  z-index: 1;
+  background: rgb(71, 136, 135);
+  transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44);
+}
+
+.active:before {
+  transform: scale(1);
+  transition-delay: 0.3s;
+  animation: 0.6s cubic-bezier(.87, -.41, .19, 1.44) 0.5s infinite forwards focus;
+}
+
+input {
+  border-radius: 36px;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44);
+}
+
+.active input {
+  width: 100%;
+  padding-left: 25px;
+  border-radius: 36px;
+}
+
+button {
+  background: rgba(255, 255, 255, 1);
+  position: absolute;
+  height: 100%;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  transition: all 0.5s cubic-bezier(.87, -.41, .19, 1.44);
+}
+
+button:after {
+  content: ' ';
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  background: rgb(254, 111, 117);
+  border-radius: 50%;
+}
+
+button:before {
+  content: ' ';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 0;
+  right: 0;
+  top: 20px;
+  transform: scale(0);
+  transform-origin: left top;
+  margin: 0 auto;
+  background: white;
+  border-radius: 50%;
+  z-index: 1;
+  transition: all 0.8s ease;
+}
+
+.active button {
+  transform: translateX(260px);
+}
+
+.active button:before {
+  transform: scale(1);
+}
+
+.focus:before {
+  transform: scale(0);
+  animation: none;
+}
+
+@keyframes focus {
+  0 {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
